@@ -1,0 +1,6 @@
+[push]
+    autoSetupRemote = true
+
+[lfs]
+    enable = true
+    fetchexclude = ""
