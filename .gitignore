@@ -48,6 +48,7 @@ public/videos/
 *.mov
 *.avi
 *.wmv
+!public/hero-video.mp4  # Allow the hero video
 
 # build files
 dist/

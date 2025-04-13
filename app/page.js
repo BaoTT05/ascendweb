@@ -64,16 +64,25 @@ export default function Home() {
           </motion.p>
 
           {/* Embedded video with controls */}
-          <motion.video
-            className="mx-auto mb-6 w-full max-w-2xl rounded shadow-lg"
-            src="/hero-video.mp4"
-            controls
+          <motion.div
+            className="relative mx-auto mb-6 w-full max-w-2xl rounded shadow-lg bg-gray-800"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.7 }}
-            poster="" 
-            // If you have a poster image for the video, put it in /public & reference it here
-          />
+          >
+            <video
+              className="w-full h-full"
+              controls
+              preload="auto"
+              playsInline
+              onError={(e) => {
+                console.error("Video loading error:", e);
+              }}
+            >
+              <source src="/hero-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
